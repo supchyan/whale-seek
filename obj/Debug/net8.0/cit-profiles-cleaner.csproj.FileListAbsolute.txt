@@ -1,0 +1,16 @@
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\cit-profiles-cleaner.exe
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\cit-profiles-cleaner.deps.json
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\cit-profiles-cleaner.runtimeconfig.json
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\cit-profiles-cleaner.dll
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\cit-profiles-cleaner.pdb
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.AssemblyInfoInputs.cache
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.AssemblyInfo.cs
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.csproj.CoreCompileInputs.cache
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.dll
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\refint\cit-profiles-cleaner.dll
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.pdb
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\cit-profiles-cleaner.genruntimeconfig.cache
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\obj\Debug\net8.0\ref\cit-profiles-cleaner.dll
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\properties\blackList.json
+c:\Users\supchyan\Documents\dotNET Projects\cit-profiles-cleaner\bin\Debug\net8.0\properties\config.json
