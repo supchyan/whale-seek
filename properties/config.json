@@ -1,4 +1,6 @@
 {
-    "UsersPath": "C:\\Users",
-    "RegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList"
+    "UsersPath": "C:\\Users\\",
+    
+    "RegistryLocalMachine": "HKEY_LOCAL_MACHINE\\",
+    "RegistryProfilesPath": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList\\"
 }

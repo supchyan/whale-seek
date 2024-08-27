@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>cit_profiles_cleaner</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+		<Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="properties\*.*">
