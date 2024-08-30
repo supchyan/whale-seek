@@ -23,7 +23,7 @@ namespace cit_profile_cleaner {
             Print(@" ||  ||  |   ||' ||  '' .||   ||  .|...|| ||. '  .|...|| .|...||  || .'   ");
             Print(@"  ||| |||    ||  ||  .|' ||   ||  ||      . '|.. ||      ||       ||'|.   ");
             Print(@"   |   |    .||. ||. '|..'|' .||.  '|...' |'..|'  '|...'  '|...' .||. ||. ");
-
+            Print("");
             Print(@"Удалить профили преподавателей [ y / n ]:");
 
             var input = Console.ReadLine();
@@ -47,7 +47,7 @@ namespace cit_profile_cleaner {
                 try {
                     var PROFILES_LIST = Registry.LocalMachine.OpenSubKey(RegistryProfilesPath);
                     
-                    if(PROFILES_LIST == null) {
+                    if (PROFILES_LIST == null) {
                         Print("[ error ] PROFILES_LIST не существует.", ConsoleColor.Red);
                         return;
                     }
@@ -60,18 +60,15 @@ namespace cit_profile_cleaner {
                         
                         // фильтрует все ключи внутри профилей,
                         // чтобы найти только созданных вручную пользователей
-                        if(profileImagePath != null) {
+                        if (profileImagePath != null) {
                             var profileUsername = profileImagePath.ToString().Contains(UsersPath) ? profileImagePath.ToString().Replace(UsersPath, "") : null;
                             if (profileUsername != null) {
-                                if (!BlackList["users"].Contains(profileUsername))
-                                {
-                                    if (!IsUserProfessor(profileUsername))
-                                    {
+                                if (!BlackList["users"].Contains(profileUsername)) {
+                                    if (!IsUserProfessor(profileUsername)) {
                                         Registry.LocalMachine.DeleteSubKey($"{RegistryProfilesPath}{profileSubKey}");
                                         Print($"[ removed ] {profileUsername} | {profileSubKey}", ConsoleColor.DarkGreen);
                                     }
-                                    else
-                                    {
+                                    else {
                                         Print($"[ skipping ] PrU | {profileUsername} | {profileSubKey}", ConsoleColor.DarkGray);
                                     }
                                     
@@ -104,27 +101,22 @@ namespace cit_profile_cleaner {
                         Print($"[ error ] {UsersPath} не существует.", ConsoleColor.Red);
                         return;
                     }
-                    if (!IsUserInBlackList(userDir))
-                    {
-                        if (!IsUserProfessor(userDir))
-                        {
+                    if (!IsUserInBlackList(userDir)) {
+                        if (!IsUserProfessor(userDir)) {
                             Print($"[ info ] Отчистка | {userDir}", ConsoleColor.DarkGreen);
 
                             DirectoryInfo profileDir = new DirectoryInfo($"{UsersPath}{userDir}");
                             SetAttributesNormal(profileDir);
-                            try
-                            {
+                            try {
                                 profileDir.Delete(true);
                             }
-                            catch (Exception e)
-                            {
+                            catch (Exception e) {
                                 Print($"[ warning ] {e.Message}", ConsoleColor.Yellow);
                                 DirsClearCommand += $"; rm -r -force {profileDir}";
                             }
                             Print($"[ success ] Готово | {userDir}", ConsoleColor.Green);
                         }
-                        else
-                        {
+                        else {
                             Print($"[ skipping ] PrU | {userDir}", ConsoleColor.DarkGray);
                         }
                         
@@ -141,14 +133,12 @@ namespace cit_profile_cleaner {
                 Console.ReadKey();
             }
         }
-        static void DeleteUserDirs()
-        {
+        static void DeleteUserDirs() {
             Print("");
             Print("# PART 3", ConsoleColor.Gray);
             DirsClearCommand += "; echo '[ info ] Готово. Any key to exit...'";
             var proc = new Process();
-            proc.StartInfo = new ProcessStartInfo
-            {
+            proc.StartInfo = new ProcessStartInfo {
                 FileName = @"powershell",
                 Arguments = DirsClearCommand
             };
@@ -156,7 +146,9 @@ namespace cit_profile_cleaner {
         }
         static bool IsUserInBlackList(string user) {
             foreach (var val in BlackList["users"]) {
-                if (val == user) return true;
+                if (val == user) {
+                    return true;
+                }
             }
 
             return false;
@@ -164,19 +156,15 @@ namespace cit_profile_cleaner {
         static bool IsUserProfessor(string user) {
             var parts = user.Split('.');
 
-            if (parts[0].ToCharArray().Length <= 3)
-            {
-                if (!deleteProfessors)
-                {
+            if (parts[0].ToCharArray().Length <= 3) {
+                if (!deleteProfessors) {
                     return true;
                 }
-                else
-                {
+                else {
                     return false;
                 }
             }
-            else
-            {
+            else {
                 return false;
             }
         }
