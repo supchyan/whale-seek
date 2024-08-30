@@ -1,1 +1,0 @@
-Get-CimInstance -Class Win32_UserProfile | Where-Object { $_.LocalPath.split('\')[-1] -eq 'victim' } | Remove-CimInstance
