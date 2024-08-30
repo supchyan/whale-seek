@@ -8,7 +8,7 @@
 		<Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <Content Include="properties\*.*">
+        <Content Include=".\config\*.*">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
