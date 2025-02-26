@@ -9,7 +9,7 @@ namespace cit_profile_cleaner {
         const string RegistryLocalMachine = @"HKEY_LOCAL_MACHINE\";
         const string RegistryProfilesPath = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\";
         
-        static readonly Dictionary<string, string[]>? BlackList = JsonSerializer.Deserialize<Dictionary<string, string[]>>(File.ReadAllText(@".\config\black_list.json"));
+        static readonly Dictionary<string, string[]> BlackList = JsonSerializer.Deserialize<Dictionary<string, string[]>>(File.ReadAllText(@".\config\black_list.json")) ?? new Dictionary<string, string[]>();
         
         static string? DirsClearCommand = @"echo '[ info ] Попытка отчистки оставшихся директорий в C:\Users...'";
         
@@ -22,9 +22,9 @@ namespace cit_profile_cleaner {
             Print(@"... ... ...  || ..    ....    ||    ....   ....    ....    ....   ||  ..        ");
             Print(@" ||  ||  |   ||' ||  '' .||   ||  .|...|| ||. '  .|...|| .|...||  || .'         ");
             Print(@"  ||| |||    ||  ||  .|' ||   ||  ||      . '|.. ||      ||       ||'|.         ");
-            Print(@"   |   |    .||. ||. '|..'|' .||.  '|...' |'..|'  '|...'  '|...' .||. ||. v1.1  ");
+            Print(@"   |   |    .||. ||. '|..'|' .||.  '|...' |'..|'  '|...'  '|...' .||. ||. v1.11 ");
             Print("");
-            Print(@"Удалить профили преподавателей [ y / n ]:");
+            Print(@"Удалить профили преподавателей [ y / n ]: ", ConsoleColor.DarkGreen, false);
 
             var input = Console.ReadLine();
             if (input == "N" || input == "n" || input == "Т" || input == "т") {
@@ -173,9 +173,12 @@ namespace cit_profile_cleaner {
                 file.Attributes = FileAttributes.Normal;
             }
         }
-        static void Print(string msg, ConsoleColor color = ConsoleColor.DarkGreen) {
+        static void Print(string msg, ConsoleColor color = ConsoleColor.DarkGreen, bool writeLine = true) {
             Console.ForegroundColor = color;
-            Console.WriteLine(msg);
+
+            if (writeLine) Console.WriteLine(msg);
+            else Console.Write(msg);
+
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
     }
