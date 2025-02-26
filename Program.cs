@@ -71,14 +71,12 @@ namespace cit_profile_cleaner {
                                     else {
                                         Print($"[ skipping ] PrU | {profileUsername} | {profileSubKey}", ConsoleColor.DarkGray);
                                     }
-                                    
                                 }
                                 else {
                                     Print($"[ skipping ] BLU | {profileUsername} | {profileSubKey}", ConsoleColor.DarkGray);
                                 }
                             }
                         }
-                        
                     }
                     PROFILES_LIST.Close();
 
@@ -119,13 +117,11 @@ namespace cit_profile_cleaner {
                         else {
                             Print($"[ skipping ] PrU | {userDir}", ConsoleColor.DarkGray);
                         }
-                        
                     }
                     else {
                         Print($"[ skipping ] BLU | {userDir}", ConsoleColor.DarkGray);
                     }
                 }
-
                 Print($"[ success ] Готово.", ConsoleColor.Green);
             }
             catch (Exception e) {
@@ -176,9 +172,13 @@ namespace cit_profile_cleaner {
         static void Print(string msg, ConsoleColor color = ConsoleColor.DarkGreen, bool writeLine = true) {
             Console.ForegroundColor = color;
 
-            if (writeLine) Console.WriteLine(msg);
-            else Console.Write(msg);
-
+            if (writeLine) {
+                Console.WriteLine(msg);
+            }
+            else {
+                Console.Write(msg);
+            }
+            
             Console.ForegroundColor = ConsoleColor.DarkGreen;
         }
     }
